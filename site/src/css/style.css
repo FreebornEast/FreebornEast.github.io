@@ -1,0 +1,464 @@
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: #344051;
+    border-bottom: 2px double #687c97;
+    line-height: 60px;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    font-size: 25px;
+    margin-left: 150px;
+    float: left;
+}
+
+.menu {
+    font-size: 18px;
+    margin-left: 320px;
+    float: left;
+}
+
+.menu li {
+    float: left;
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.main {
+    background: url(../img/background.jpg) center/100% no-repeat local;
+    width: 100%;
+    height: 570px;
+    float: left;
+}
+
+.title_container {
+    float: left;
+    margin: 270px 300px;
+    text-align: center;
+}
+
+.title_container h1 {
+    font-size: 45px;
+    font-family: "Luminari", fantasy;
+    color:#ccffff;
+}
+
+.title_container h4 {
+    margin-top: 18px;
+    font-size: 22px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color:#ccffffa9;
+}
+
+.title_container button {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 16px;
+    padding: auto 10px;
+    background-color: #d5e4e35e;
+    font-family:"Bradley Hand", cursive;
+    font-size: 18px;
+}
+
+.about_me {
+    float: left;
+    width: 100%;
+    height: 675px;
+    text-align: center;
+    font-size: 23px;
+    color: rgb(37, 33, 33);
+    background-color: none;
+} 
+
+.title {
+    text-transform: uppercase;
+    margin-top: 100px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 15px 15px 8px rgb(0, 0, 0);
+    color: #121313;
+}
+
+.hr-line {
+    margin: 30px auto 0px;
+    width: 100px;
+	border-bottom: 5px solid rgb(255, 166, 0);
+}
+
+.about_me img {
+    border-radius: 100px;
+    width: 200px;
+    display: block;
+    margin: 30px auto 20px;
+}
+
+.about_me button {
+    border: 2px solid rgba(105, 69, 1, 0.562);
+    background-color: rgba(105, 69, 1, 0.3);
+    border-radius: 7px;
+    width: 150px;
+    height: 40px;
+    margin-top: 30px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 18px;
+    color: #161111;
+}
+
+.about_me p:not(:first-child) {
+    margin: 0px auto 0px;
+    color: rgb(8, 8, 8);
+    width: 800px;
+    text-align: justify;
+}
+
+.skills {
+    float: left;
+    width: 100%;
+    height: 500px;
+    background: url(../img/cont.jpg) center/100% no-repeat fixed;
+    text-align: center;
+}
+
+.skills div {
+    float: left;
+    width: 250px;
+    margin: 100px 20px auto 60px;
+}
+
+.skills img {
+    width: 50px;
+}
+
+.tit {
+    margin: 35px auto 20px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    color: #0053cf;
+    text-shadow: 5px 5px 4px rgb(60, 255, 0);
+}
+
+.skills span {
+    font-family: "URW Chancery L", cursive;
+    font-size: 14px;
+    color: #050505; 
+}
+
+.cases {
+    float: left;
+    width: 100%;
+    height: 1020px;
+    margin-top:100px;
+    text-align: center;
+}
+
+.cases>p {
+    margin: 30px auto;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 24px;
+    color: #000102;
+}
+
+.cases img {
+    width: 80%;
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 10px black;
+}
+
+.client {
+    float: left;
+    width: 210px;
+    height: 210px;
+    margin-left: 10%;
+    text-align: justify;
+}
+
+.client p {
+    margin: 10px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000102;
+}
+
+.client span {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000102;
+}
+
+.client button {
+    margin: 20px auto;
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    padding: auto 10px;
+    background-color: #03e2d3d8;
+    font-family:"Bradley Hand", cursive;
+    font-size: 18px;
+}
+
+.project {
+    margin-left: 30%;
+    margin-right:10%;
+    text-align: justify;
+}
+
+.project p {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 800;
+    color: #000102;
+    margin-bottom: 10px;
+}
+
+.project span {
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    color: #000102;
+}
+
+.price {
+    float: left;
+    width: 100%;
+    margin-top: 150px;
+    text-align: center;
+}
+
+.price>p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.type_site {
+    margin: 50px auto auto;
+    width: 890px;
+    text-align: justify;
+    color: #1c2534;
+}
+
+.type_site_p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.type_site select {
+    width: 890px;
+    height: 55px;
+    margin-bottom: 50px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #737373;
+}
+
+.type_site hr {
+    margin: -10px auto 0px;
+    width: 890px;
+	border-bottom: 5px solid #d1d1d1;
+}
+
+.deadlines{
+    float: left;
+    width: 890px;
+}
+
+.deadlines p {
+    width: 878px;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+
+.deadlines input {
+    transform-style: flat;
+    width: 10px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.statistic {
+    float: left;
+    width: 100%;
+    height: 515px;
+    background: url(../img/statistic.jpg) no-repeat center/100% fixed;
+    text-align: center;
+    margin-top: 155px;
+}
+
+.statistic div {
+    float: left;
+    width: 270px;
+    height: 200px;
+    margin: 80px 10px auto 50px;
+    color:#323e4f;
+}
+
+.statistic img {
+    height: 60px;
+}
+
+.stat {
+    font-family: Impact, fantasy;
+    font-weight: 500;
+    font-size: 30px;
+    margin: 30px auto 30px;
+}
+
+.statistic div p:nth-child(3) {
+    font-family: "Andale Mono", monospace;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.reviews {
+    float: left;
+    width: 100%;
+    height: 621px;
+    text-align: center;
+}
+
+.reviews img{
+    height: 100px;
+    border-radius: 50%;
+    margin: 60px auto 30px;
+}
+
+.reviews div p {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    width: 50%;
+    margin: auto;
+    font-size: 18px;
+}
+
+.reviews p:nth-child(3) {
+    font-family: "DejaVu Sans Mono", monospace;
+    margin: 38px auto 50px;
+}
+
+.contacts {
+    float: left;
+    width: 100%;
+    height: 860px;
+    background: url(../img/contacts.jpg) repeat center/100%;
+    text-align: center;
+    color: white;
+}
+
+.title2 {
+    text-transform: uppercase;
+    margin-top: 100px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-shadow: 15px 15px 8px rgb(0, 0, 0);
+}
+.contacts>p:nth-child(3) {
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 30px auto 45px;
+    font-size: 20px;
+}
+
+.contacts1 {
+    width: 70%;
+    height: 90px;
+    margin: auto;
+}
+
+.contacts1 div {
+    float: left;
+    width: 100 px;
+    margin: auto 70px;
+    font-size: 18px;
+}
+
+.contacts1 img {
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.contacts1 a {
+    color: white;
+}
+
+
+.message p {
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 40px auto 45px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.message div {
+    margin: auto;
+    width: 60%;
+}
+
+.message1 {
+    width: 350px;
+    height: 35px;
+    margin:auto 13px 15px;
+    color: #5d5d5e;
+    padding-left: 10px;
+}
+
+.message textarea {
+    margin: auto;
+    width: 730px;
+    padding: 10px;
+}
+
+.message2 {
+    width: 125px;
+    height: 50px;
+    border-radius: 5px;
+    border: 3px solid white;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 30px auto 75px;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 18px;
+}
+
+.cont_img {
+    height: 40px;
+    margin: auto 25px;
+}
+
+.map {
+    float: left;
+}
+
+footer {
+    float: left;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    background-color: #344051;
+}
+
+footer p {
+    padding-top: 40px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
