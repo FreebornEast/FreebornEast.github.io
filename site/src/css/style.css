@@ -1,3 +1,73 @@
+/* Анимация загрузки экрана */
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader-bounce {
+
+0%, 100% {
+    transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+  
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+/* Контент */
 nav {
     width: 100%;
     height: 60px;
@@ -6,12 +76,29 @@ nav {
     line-height: 60px;
     color: white;
     font-family:Arial, Helvetica, sans-serif;
+    position:fixed;
+    z-index: 1;
 }
 
 .logo {
     font-size: 25px;
     margin-left: 150px;
     float: left;
+    animation: comming 2s ease;
+}
+
+@keyframes comming {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
 }
 
 .menu {
@@ -25,19 +112,73 @@ nav {
     margin-right: 30px;
     text-transform: uppercase;
     font-size: 15px;
+    animation: menu 0.5s forwards;
+    opacity: 0;
+}
+
+.menu li a {
+    display: inline-block;
+    transition: all 0.3s;
+    color: white;
+    transform: scale(1);
+}
+
+.menu li a:visited {
+    color: white;
+}
+
+.menu li a:hover {
+    color: rgb(255, 166, 0);
+}
+
+.menu li a:active {
+    transform: scale(1.1);
+}
+
+.menu li:first-child {
+    animation-delay: 0.1s;
+}
+.menu li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.menu li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.menu li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.menu li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.menu li:last-child {
+    animation-delay: 0.6s;
+}
+
+@keyframes menu {
+    from {
+        opacity: 0;
+        margin-top:-60px;
+    }
+    to {
+        opacity: 1;
+        margin-top:0px;
+    }
 }
 
 .main {
     background: url(../img/background.jpg) center/100% no-repeat local;
     width: 100%;
-    height: 570px;
+    height: 100%;
     float: left;
 }
 
 .title_container {
     float: left;
-    margin: 270px 300px;
+    margin: 300px 300px;
     text-align: center;
+    opacity: 0;
+    animation: titlecont 1s ease forwards;
+    animation-delay: 0.5s;
 }
 
 .title_container h1 {
@@ -53,15 +194,35 @@ nav {
     color:#ccffffa9;
 }
 
-.title_container button {
+.title_container input {
     width: 150px;
-    height: 40px;
+    height: 45px;
     border-radius: 10px;
     margin: 16px;
-    padding: auto 10px;
     background-color: #d5e4e35e;
     font-family:"Bradley Hand", cursive;
     font-size: 18px;
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.title_container input:hover {
+    background-color: #344051;
+    color: white;
+}
+
+.title_container input:active {
+    transform: scale(1.1);
+}
+
+@keyframes titlecont {
+    from {
+        margin-left: -500px;
+    }
+    to {
+        margin-left: 300px;
+        opacity: 1;
+    }
 }
 
 .about_me {
@@ -89,6 +250,16 @@ nav {
     margin: 30px auto 0px;
     width: 100px;
 	border-bottom: 5px solid rgb(255, 166, 0);
+    animation: hr 0.7s infinite alternate;
+}
+
+@keyframes hr {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .about_me img {
@@ -98,37 +269,82 @@ nav {
     margin: 30px auto 20px;
 }
 
-.about_me button {
-    border: 2px solid rgba(105, 69, 1, 0.562);
-    background-color: rgba(105, 69, 1, 0.3);
-    border-radius: 7px;
-    width: 150px;
-    height: 40px;
-    margin-top: 30px;
-    font-family: "Trebuchet MS", sans-serif;
-    font-size: 18px;
+.about_me input {
     color: #161111;
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    margin-top: 30px;
+    background-color: rgba(230, 155, 17, 0.6);
+    background-image: linear-gradient(45deg, rgba(250, 246, 1, 0) 30%, rgba(143, 45, 45, 0.8), rgba(26, 21, 21, 0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%, auto;
+    background-position: 200% 0, 0 0;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.7) ;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    transition: active 0.1s;
+} 
+
+.about_me input:active {
+    transform: translate(0, 1px) ;
+    box-shadow: none;
+}
+.about_me input:hover {
+    transition: .4s linear;
+    background-position: -200% 0, 0 0;
 }
 
-.about_me p:not(:first-child) {
+.about_me p:nth-child(4) {
     margin: 0px auto 0px;
     color: rgb(8, 8, 8);
     width: 800px;
     text-align: justify;
+    transform: scale(1, 1);
+    transition-duration: 0.5s;
 }
+
+.about_me p:nth-child(4):hover {
+    transform: scale(1.1, 1);
+}
+
 
 .skills {
     float: left;
     width: 100%;
-    height: 500px;
-    background: url(../img/cont.jpg) center/100% no-repeat fixed;
+    height: 90%;
+    background: url(../img/cont.jpg) center/100% no-repeat fixed;   
     text-align: center;
+
 }
+
+/*.parallax {
+    background: url(../img/cont.jpg) center/100% no-repeat fixed;
+    width: 100%;
+    height: 90%;
+}*/
 
 .skills div {
     float: left;
     width: 250px;
     margin: 100px 20px auto 60px;
+}
+
+.skills div:hover{
+    transform: rotate();
+    animation: divs 0.3s 2 ease;
+}
+
+@keyframes divs {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
 }
 
 .skills img {
@@ -200,9 +416,20 @@ nav {
     height: 45px;
     border-radius: 10px;
     padding: auto 10px;
-    background-color: #03e2d3d8;
+    background-color: #6ab5f1;
     font-family:"Bradley Hand", cursive;
     font-size: 18px;
+}
+
+.client button:hover {
+    color: rgb(255,255,255);
+    background-image: linear-gradient(#9dc7e7, #74afdd 50%, #378bce);
+}
+.client button:active {
+    color: rgb(255,255,255);
+    border-color: #2970a9;
+    background-image: linear-gradient(#5796c8, #6aa2ce);
+    box-shadow: none;
 }
 
 .project {
@@ -219,7 +446,7 @@ nav {
     margin-bottom: 10px;
 }
 
-.project span {
+.project article {
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 400;
@@ -309,6 +536,11 @@ nav {
     height: 200px;
     margin: 80px 10px auto 50px;
     color:#323e4f;
+    transition: all 1s ease 0s;
+}
+
+.statistic div:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .statistic img {
@@ -332,7 +564,7 @@ nav {
 .reviews {
     float: left;
     width: 100%;
-    height: 621px;
+    height: 645px;
     text-align: center;
 }
 
@@ -342,17 +574,23 @@ nav {
     margin: 60px auto 30px;
 }
 
-.reviews div p {
+.articles article {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     width: 50%;
-    margin: auto;
+    margin: 0 auto 40px;
     font-size: 18px;
 }
 
-.reviews p:nth-child(3) {
-    font-family: "DejaVu Sans Mono", monospace;
-    margin: 38px auto 50px;
+.articles p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin: 0 auto 50px;
 }
+
+.reviews input {
+    width: 30px;
+}
+
 
 .contacts {
     float: left;
@@ -407,7 +645,7 @@ nav {
     font-size: 20px;
 }
 
-.message div {
+.message_form {
     margin: auto;
     width: 60%;
 }
@@ -418,14 +656,18 @@ nav {
     margin:auto 13px 15px;
     color: #5d5d5e;
     padding-left: 10px;
+    font-size: 18px;
 }
 
 .message textarea {
     margin: auto;
     width: 730px;
     padding: 10px;
+    resize: none;
+    font-size: 18px;
+    color: #5d5d5e;
 }
-
+/*
 .message2 {
     width: 125px;
     height: 50px;
@@ -437,10 +679,53 @@ nav {
     font-family: "Trebuchet MS", sans-serif;
     font-size: 18px;
 }
+*/
+.message2 {
+    width: 125px;
+    height: 50px;
+    color: rgb(216, 70, 25);
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 18px;
+    margin: 30px auto 75px;
+    text-shadow: 0 0 1px rgb(204, 31, 31);
+    padding: .8em 1.2em;
+    background: #c9d8dd linear-gradient(#b4b9bb, #ffffff);
+    box-shadow:
+        0 15px 12px -12px rgb(0,0,0),
+        0 -2px 0 -1px rgb(102, 103, 104),
+        0 -4px 0 -2px rgb(121, 122, 122),
+        0 -6px 0 -3px rgb(120, 120, 121),
+        0 -8px 0 -4px rgb(91, 92, 92),
+        0 -10px 0 -5px rgb(53, 54, 54),
+        0 -12px 0 -6px rgb(29, 29, 29);
+    transition: all 0.2s ease 0s;
+}
+
+.message2:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.message2:active {
+    margin: 0 calc(2px + 1px) 2px 0;
+    padding: calc(.8em - 2px) calc(1.2em - 6px - 2px);
+    border-left: 2px solid rgb(150,150,150);
+    border-right: 2px solid rgb(150,150,150);
+    border-bottom: 2px solid rgb(230,230,230);
+    background: rgb(44,160,202) linear-gradient(#a1b4bb, #975b5b);
+    box-shadow: none;
+    -webkit-transform: translate(6px, -6px);
+    transform: translate(6px, -6px);
+    margin: 30px auto 75px;
+}
 
 .cont_img {
     height: 40px;
     margin: auto 25px;
+    transition: all 0.5s ease 0s;
+}
+
+.cont_img:hover {
+    transform: scale(1.2, 1.2);    
 }
 
 .map {
@@ -452,7 +737,8 @@ footer {
     width: 100%;
     height: 90px;
     text-align: center;
-    background-color: #344051;
+    background-color: #354051;
+    border-top: 2px solid #4e5e75;
 }
 
 footer p {
