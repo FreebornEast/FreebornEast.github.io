@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание сайта">
+    <meta name="author" content="Константин Кузин">
+    <meta name="robots" content="all">
+    <title>Мой первый сайт</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css"> <!--Подключение шрифтов-->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<!--Предзагрузка сайта-->
+    <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__item"></div>
+          <div class="preloader__item"></div>
+        </div>
+    </div>
+      
+    <script>
+        window.onload = function () {
+          document.body.classList.add('loaded_hiding');
+          window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+          }, 500);
+        }
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script> <!--Добавление скрипта для кнопки меню-->
+
+    <header>
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-3 col-lg-5 col-8">
+                        <div class="logo">Константин Кузин</div>
+                    </div>
+                    <div class="px-0 col-xxl-5 col-xl-6 col-lg-7 offset-xxl-4 offset-xl-3 d-none d-lg-block"> <!--px-0 - padding по оси x; xxl, xl...-разрешения экрана, offset - отступ, d-none d-lg-block - Значит, что если разрешение меньше lg, то меню не вылезает -->
+                        <div class="menu">
+                            <ul>
+                                <li><a href="#">Обо мне</a></li>
+                                <li><a href="#">Услуги</a></li>
+                                <li><a href="#">Кейсы</a></li>
+                                <li><a href="#">Прайс</a></li>
+                                <li><a href="#">Отзывы</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex d-lg-none flex-column justify-content-center align-items-end"><!--d-flex - Использование flex к блоку;flex-column - для создания вертикального направления -->
+                        <div class="dropdown">
+                            <a class="btn btn-outline-secondary dropdown-toggle menu_button" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Навигация</a>
+                            <ul class="dropdown-menu items_menu" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Обо мне</a></li>
+                                <li><a class="dropdown-item" href="#">Услуги</a></li>
+                                <li><a class="dropdown-item" href="#">Кейсы</a></li>
+                                <li><a class="dropdown-item" href="#">Прайс</a></li>
+                                <li><a class="dropdown-item" href="#">Отзывы</a></li>
+                                <li><a class="dropdown-item" href="#">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="main">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="title_container">
+                            <h1>Привет <br> Я Константин Кузин</h1>
+                            <h4><i class="fa fa-css3" aria-hidden="true"></i>
+                                Фулл стек веб-разработчик</h4>
+                            <input type="button" name="" id="" value="Обо мне">
+                            <input type="button" name="" id="" value="Мои работы">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </section>
+        
+        <section class="about_me">
+            <p class="title">Обо мне</p>
+            <hr class="hr-line">
+            <img src="img/photo.png" alt="" class="photo">
+            <div class="col-lg-8 col-10">
+                <p class="about_me_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Non, magnam quidem labore rerum obcaecati inventore, consectetur 
+                    ducimus officia fuga eveniet aut, ea dolor laboriosam blanditiis 
+                    est mollitia beatae aliquid quisquam? Ipsa velit maiores ipsam quia, 
+                    fugiat obcaecati sapiente numquam nisi!</p>
+            </div>
+            <input type="button" name="" id="" value="Скачать резюме">
+        </section>
+      
+        <section class="skills">
+            <p class="title">Что я умею</p>
+            <hr class="hr-line">
+            <div class="skills_row">
+                <div>
+                    <img src="img/img1.png" alt="">
+                    <p class="tit">Веб-дизайн</p>
+                    <span>Это отрасль веб-разработки и разновидность дизайна, в задачи которой входит 
+                        проектирование пользовательских веб-интерфейсов для сайтов или веб-приложений.</span>
+                </div>
+                <div> 
+                    <img src="img/img2.png" alt="">
+                    <p class="tit">Разработка</p>
+                    <span>Это процесс создания веб-сайта или веб-приложения. Основными этапами процесса 
+                        являются веб-дизайн, вёрстка страниц, программирование на стороне клиента и сервера, 
+                        а также конфигурирование веб-сервера.</span>
+                </div>
+                <div>
+                    <img src="img/img3.png" alt="">
+                    <p class="tit">SEO-оптимизация</p>
+                    <span>Это комплекс мероприятий по внутренней и внешней оптимизации для поднятия позиций сайта 
+                        в результатах выдачи поисковых систем по определённым запросам пользователей.</span>
+                </div>
+                <div>
+                    <img src="img/img4.png" alt="">
+                    <p class="tit">Маркетинг</p>
+                    <span>Это деятельность, направленная на удовлетворение рыночных потребностей с целью 
+                        извлечения прибыли.</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="cases">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8 text-center">
+                        <p class="title">Кейсы</p>
+                        <hr class="hr-line">
+                        <p>Создание любых кейсов на заказ</p>
+                    </div>
+                </div>
+                <div class="col-12 justify-content-center">
+                    <p class="image"><img src="img/cases.png" alt="" class="w-100"></p>
+                </div>
+                <div class="row">
+                    <div class="col-3 col-md-4 d-none d-md-block">
+                        <div class="client">
+                            <p>Client</p>
+                            <span class="client_span">Какая-то компания</span>
+                            <p>Website</p>
+                            <span>https://loremlorem.com</span>
+                            <br>
+                            <button><a href="https://google.com" target="blank">Перейти на сайт</a></button>
+                        </div>
+                    </div>
+                    <div class="col-9 col-md-8 d-none d-md-block">
+                        <div class="project">
+                            <p>Название проекта</p>
+                            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Fugiat facere doloremque harum ullam error molestiae ab temporibus 
+                                ipsam! Assumenda illo eius excepturi animi delectus tenetur necessitatibus 
+                                similique velit, ducimus fuga!</article>
+                        </div>
+                    </div>
+                </div>
+                <!--Если размер меньше md, скрывается предыдущее и вылазит то, что ниже-->
+                <div class="col-12 d-md-none">
+                    <div class="project">
+                        <p>Название проекта</p>
+                        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Fugiat facere doloremque harum ullam error molestiae ab temporibus 
+                            ipsam! Assumenda illo eius excepturi animi delectus tenetur necessitatibus 
+                            similique velit, ducimus fuga!</article>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 d-md-none">
+                        <div class="client">
+                            <p>Client</p>
+                            <span>Какая-то компания</span>
+                        </div>
+                    </div>
+                    <div class="col-8 d-md-none d-flex flex-column text-right text-md-right">
+                        <div class="client">
+                            <p>Website</p>
+                            <span>https://loremlorem.com</span>
+                            <button><a href="https://google.com" target="blank">Перейти на сайт</a></button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="price">
+            <p class="price_title">Расчет стоимости</p>
+            <form class="type_site">
+                <p class="type_site_p">Тип сайта</p>
+                <select name="type_sites" id="">
+                    <option value="Выберите пункт">Выберите пункт...</option>
+                    <option value="Коммерческий сайт">Коммерческий сайт</option>
+                    <option value="Информационный сайт">Информационный сайт</option>
+                    <option value="Социальный сайт">Социальный сайт</option>
+                    <option value="Трафиковый сайт">Трафиковый сайт</option>
+                    <option value="Веб-сервис">Веб-сервис</option>
+                    <option value="Черное SEO">Черное SEO</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                <p class="type_site_p">Дизайн</p>
+                <select name="design" id="">
+                    <option value="Выберите пункт">Выберите пункт...</option>
+                    <option value="Минимализм">Минимализм</option>
+                    <option value="Красивая типографика">Красивая типографика</option>
+                    <option value="Классический стиль">Классический стиль</option>
+                    <option value="Responsive">Responsive</option>
+                    <option value="Корпоративный стиль">Корпоративный стиль</option>
+                    <option value="Retro">Retro</option>
+                    <option value="Hi-tech">Hi-tech</option>
+                    <option value="Organic & natural">Organic & natural</option>
+                    <option value="Другое">Другое</option>
+                </select>
+                <p class="type_site_p">Адаптивность</p>
+                <select name="adaptability" id="">
+                    <option value="Выберите пункт">Выберите пункт...</option>
+                    <option value="Фиксированная верстка">Фиксированная верстка</option>
+                    <option value="Резиновая верстка">"Резиновая" верстка</option>
+                    <option value="Гибкая верстка">Гибкая верстка</option>
+                </select>
+                <hr class="hr_price">
+                <div class="deadlines">
+                    <div class="time">
+                        <p>Сроки:</p>
+                    <input type="text" name="deadlines" id="" placeholder="1110">
+                    </div>
+                    <div class="costs">
+                        <p>Стоимость:</p>
+                        <input type="text" name="price" id="" placeholder="1111110">  
+                    </div>
+                </div>
+                <input type="button" class ="message" name="" id="" value="Оставить заявку">
+            </form>
+        </section>
+    
+
+        <section class="statistic">
+            <p class="title">Немного статистики</p>
+            <hr class="hr-line">
+            <div class="statistic_row">
+                <div>
+                    <img src="img/img5.png" alt="">
+                    <p class="stat">100</p>
+                    <p>довольных клиентов</p>
+                </div>
+                <div>
+                    <img src="img/img6.png" alt="">
+                    <p class="stat">2000</p>
+                    <p>часов работы</p>
+                </div>
+                <div>
+                    <img src="img/img7.png" alt="">
+                    <p class="stat">400</p>
+                    <p>заказов выполнено</p>
+                </div>
+                <div>
+                    <img src="img/img8.png" alt="">
+                    <p class="stat">100</p>
+                    <p>наград получено</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="container">
+                <div class="row">
+                    <div class="col d-flex flex-column">
+                        <p class="title">Отзывы</p>
+                        <hr class="hr-line">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xxl-8 offset-xxl-2 col-md-10 offset-md-1">
+                        <div class="articles">
+                            <img src="img/rev1.jpeg" alt="">
+                            <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem corrupti 
+                                pariatur aperiam! Perspiciatis molestias delectus, reprehenderit architecto 
+                                odio tempore amet quasi veniam magnam aspernatur perferendis, aliquid itaque 
+                                necessitatibus. Illum, sequi.</article>
+                            <p><b>Михаил</b>, Ген директор ПАО "Газпром"</p>
+                        </div>
+                        <div class="form_radio">
+                            <input type="radio" name="1" id="" value="1" checked>
+                            <input type="radio" name="1" id="" value="2">
+                            <input type="radio" name="1" id="" value="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-column">
+                        <p class="title2">Мои контакты</p>
+                        <hr class="hr-line">
+                        <p class="status">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium officiis</p>
+                    </div>
+                    <div class="row box_cont">
+                        <div class="box_cont1 col-xxl-2 col-xl-2 col-lg-2 offset-lg-2 col-md-4 offset-md-0">
+                            <div>
+                                <img src="img/cont1.png" alt="">
+                                <p>Московская обл., <br>Раменский район</p>
+                            </div>
+                        </div>
+                        <div class="box_cont1 col-xxl-4 col-xl-4 col-lg-4 col-md-4">
+                            <div>
+                                <img src="img/cont2.png" alt=""> <br>
+                                <a href="https://konstantinkuzin96@gmail.com">konstantinkuzin96@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="box_cont1 col-xxl-2 col-xl-2 col-lg-2 col-md-4">
+                            <div>
+                                <img src="img/cont3.png" alt="">
+                                <p>+7-999-640-68-16</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+            <div class="box_message">
+                <div class="col-12 d-flex flex-column">
+                    <p>Оставьте мне сообщение</p>
+                </div>
+                <form type="message_form">
+                    <input type="text" class="message1" name="" id="" placeholder="Введите ваше имя">
+                    <input type="email" class="message1" name="" id="" placeholder="Введите email">
+                    <br>
+                    <textarea name="" id="" cols="50" rows="6" placeholder="Сообщение"></textarea>
+                    <br>
+                    <input type="button" class="message2" name="" id="" value="Отправить">
+                </form>
+            </div>
+            <a href="https://vk.com/freeborn_east" target="blank"><img src="img/cont4.png" alt="" class="cont_img"></a>
+            <a href="https://instagram.com/6_minut_nazad" target="blank"><img src="img/cont5.png" alt="" class="cont_img"></a>
+            <a href="https://github.com/FreebornEast" target="blank"><img src="img/cont6.png" alt="" class="cont_img"></a>
+        </section>
+
+        <section class="map">
+            <p>
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A90f901508fde9ac7e80ad36e6a79742fdcc08646d3475340deff338dfb41469e&amp;width=100%&amp;height=350&amp;lang=ru_RU&amp;scroll=true"></script>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright 2022. design by Konstantin Kuzin</p>
+    </footer>
+
+    <script src="js/myScript.js"></script>
+</body>
+</html>

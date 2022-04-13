@@ -1,0 +1,934 @@
+/* Подключение шрифтов ()всегда вначале кода!) */
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap'); /* Онлайн через сайт */
+
+/* Подключение через загрузку шрифтов */
+@font-face {
+    font-family: 'Franklin Gothic';
+    src: url('../fonts/FranklinGothic-Medium.eot');
+    src: url('../fonts/FranklinGothic-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/FranklinGothic-Medium.woff2') format('woff2'),
+        url('../fonts/FranklinGothic-Medium.woff') format('woff'),
+        url('../fonts/FranklinGothic-Medium.ttf') format('truetype'),
+        url('../fonts/FranklinGothic-Medium.svg#FranklinGothic-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Подключение скачанных шрифтов */
+@font-face {
+    font-family: 'DS Nova';
+    src: url('../fonts/DSNovaBlack.eot');
+    src: url('../fonts/DSNovaBlack.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DSNovaBlack.woff2') format('woff2'),
+        url('../fonts/DSNovaBlack.woff') format('woff'),
+        url('../fonts/DSNovaBlack.ttf') format('truetype'),
+        url('../fonts/DSNovaBlack.svg#DSNovaBlack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+} 
+
+/* Анимация загрузки экрана */
+.preloader {
+    /*фиксированное позиционирование*/
+    position: fixed;
+    /* координаты положения */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* фоновый цвет элемента */
+    background: #e0e0e0;
+    /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+    z-index: 1001;
+}
+
+.preloader__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: #337ab7;
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+    top: auto;
+    bottom: 0;
+    animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader-bounce {
+
+0%, 100% {
+    transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}
+  
+.loaded_hiding .preloader {
+    transition: 0.3s opacity;
+    opacity: 0;
+}
+
+.loaded .preloader {
+    display: none;
+}
+
+/* Контент */
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: #344051;
+    border-bottom: 2px double #687c97;
+    line-height: 60px;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+    position:fixed;
+    z-index: 10;
+}
+
+.logo {
+    float: left;
+    font-size: 25px;
+    line-height: 59px;
+    font-family: 'Franklin Gothic';
+    animation: comming 2s ease;
+}
+
+@keyframes comming {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    float: left;
+}
+
+.menu li {
+    float: left;
+    line-height: 60px;
+    margin-right: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'Franklin Gothic';
+    animation: menu 0.5s forwards;
+    opacity: 0;
+}
+
+.menu li a {
+    display: inline-block;
+    transition: all 0.3s;
+    color: white;
+    transform: scale(1);
+    text-decoration: none;
+}
+
+.menu li a:visited {
+    color: white;
+}
+
+.menu li a:hover {
+    color: rgb(255, 166, 0);
+}
+
+.menu li a:active {
+    transform: scale(1.1);
+}
+
+.menu li:first-child {
+    animation-delay: 0.1s;
+}
+.menu li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.menu li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.menu li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+.menu li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+.menu li:last-child {
+    animation-delay: 0.6s;
+}
+
+@keyframes menu {
+    from {
+        opacity: 0;
+        margin-top:-60px;
+    }
+    to {
+        opacity: 1;
+        margin-top:0px;
+    }
+}
+
+.menu_button {
+    color: white;
+    font-family: 'Franklin Gothic';
+}
+.menu_button:visited {
+    color: white;
+}
+
+/* Настройка главного окна */
+.main {
+    background: url(../img/background.jpg) right/cover no-repeat local;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.title_container {
+    float: left;
+    text-align: center;
+    width: 100%;
+    margin-top: 160px;
+    opacity: 0;
+    animation: titlecont 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.title_container h1 {
+    font-size: 55px;
+    font-family: 'Franklin Gothic', sans-serif;
+    letter-spacing: -1.5px;
+    color:#ccffff;
+}
+
+.title_container h4 {
+    margin-top: 18px;
+    font-size: 25px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color:#ccffffa9;
+}
+
+.title_container input {
+    width: 150px;
+    height: 45px;
+    border-radius: 10px;
+    margin: 16px;
+    background-color: #d5e4e35e;
+    font-family:"Bradley Hand", cursive;
+    font-size: 18px;
+    transition: all 0.2s;
+    transform: scale(1);
+}
+
+.title_container input:hover {
+    background-color: #344051;
+    color: white;
+}
+
+.title_container input:active {
+    transform: scale(1.1);
+}
+
+@keyframes titlecont {
+    from {
+        margin-left: -500px;
+    }
+    to {
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@media (max-width:991px) {
+    .title_container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .main {
+        position: relative;
+    }
+    .main::after {
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        background: rgba(0,0,0,0.4);
+    }
+
+    .title_container input {
+        background-color: #00ffee5e;
+    }
+
+    .title_container input:hover {
+        background-color: #636a75;
+        color: white;
+    }
+}
+
+/* Редактирование блока Обо мне */
+.about_me {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: rgb(37, 33, 33);
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.title {
+    text-transform: uppercase;
+    margin-top: 100px;
+    font-size: 34px;
+    font-family: 'Franklin Gothic', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 15px 15px 8px rgb(0, 0, 0);
+    color: #121313;
+}
+
+.hr-line {
+    margin: 30px auto 0px;
+    width: 100px;
+	border-bottom: 5px solid rgb(255, 166, 0);
+    animation: hr 0.7s infinite alternate;
+}
+
+@keyframes hr {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.about_me img {
+    border-radius: 100px;
+    width: 200px;
+    display: block;
+    margin: 30px auto 20px;
+}
+
+.about_me input {
+    color: #161111;
+    width: 150px;
+    height: 45px;
+    border-radius: 7px;
+    margin-top: 30px;
+    background-color: rgba(230, 155, 17, 0.6);
+    background-image: linear-gradient(45deg, rgba(250, 246, 1, 0) 30%, rgba(143, 45, 45, 0.8), rgba(26, 21, 21, 0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%, auto;
+    background-position: 200% 0, 0 0;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.7) ;
+    font-family: 'Franklin Gothic', sans-serif;
+    font-size: 16px;
+    transition: active 0.1s;
+    margin-bottom: 97px;
+    /*position: relative;*/
+}
+/* Как вставить иконку загрузки в кнопку? */
+/*
+.about_me input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    width: 25px;
+    height: 25px;
+    background: url('https://cdn2.iconfinder.com/data/icons/lightly-icons/30/cloud-download-480.png') no-repeat;
+    background-size: cover;
+}
+*/
+
+.about_me input:active {
+    transform: translate(0, 1px) ;
+    box-shadow: none;
+}
+.about_me input:hover {
+    transition: .4s linear;
+    background-position: -200% 0, 0 0;
+}
+
+.about_me_p {
+    width: 100%;
+    font-family:"Calibri",'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    color: rgb(8, 8, 8);
+    text-align: justify;
+    transform: scale(1, 1);
+    transition-duration: 0.5s;
+}
+
+.about_me_p:hover {
+    transform: scale(1.1, 1);
+}
+
+/* Редактирование блока  что я умею */
+.skills {
+    float: left;
+    width: 100%;
+    background: url(../img/cont.jpg) center/100% repeat-y fixed;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+.skills_row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.skills_row div {
+    flex-basis: 250px;
+    flex-shrink: 0;
+    margin-top: 100px;
+    margin-bottom: 90px;
+}
+
+.skills_row div:hover{
+    transform: rotate();
+    animation: divs 0.3s 2 ease;
+}
+
+@keyframes divs {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3deg);
+    }
+    75% {
+        transform: rotate(-3deg);
+    }
+}
+
+.skills img {
+    width: 50px;
+}
+
+.tit {
+    margin: 35px auto 20px;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    color: #0053cf;
+    text-shadow: 5px 5px 4px rgb(60, 255, 0);
+}
+
+.skills span {
+    font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    color: #050505; 
+}
+
+@media (max-width:1000px) {
+    .skills_row {
+        flex-wrap: wrap;
+    }
+    .skills_row div:nth-child(4) {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:757px) {
+    .skills_row div:nth-child(3) {
+        margin-top: 0;
+    }
+}
+
+@media (max-width:507px) {
+    .skills_row div:nth-child(2) {
+        margin-top: 0;
+    }
+}
+
+/* Редактирование блока кейсы */
+.cases {
+    float: left;
+    width: 100%;
+}
+
+.text-center p:nth-child(3) {
+    margin: 30px auto;
+    font-family: Calibri,'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    color: #000102;
+}
+
+.image {
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px black;
+}
+
+.client p {
+    margin: 10px auto;
+    font-family: 'Franklin Gothic', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000102;
+}
+
+.client span {
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #000102;
+}
+
+.client button {
+    margin-top: 20px;
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    padding: auto 10px;
+    background-color: #6ab5f1;
+    font-family:"Bradley Hand", cursive;
+    font-size: 18px;
+}
+
+.client button:hover {
+    color: rgb(255,255,255);
+    background-image: linear-gradient(#9dc7e7, #74afdd 50%, #378bce);
+}
+.client button:active {
+    color: rgb(255,255,255);
+    border-color: #2970a9;
+    background-image: linear-gradient(#5796c8, #6aa2ce);
+    box-shadow: none;
+}
+
+.client a {
+    text-decoration: none;
+}
+
+.project {
+    text-align: justify;
+}
+
+.project p {
+    font-family: 'Franklin Gothic', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    color: #000102;
+    margin-bottom: 10px;
+}
+
+.project article {
+    font-size: 21px;
+    font-family: Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    color: #000102;
+}
+
+/* Редактирование блока расчет стоимости */
+.price {
+    float: left;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    box-shadow: 0 -2px 20px #a39292;
+}
+
+.price_title {
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-size: 34px;
+    font-family: 'Franklin Gothic', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 15px 15px 8px rgb(0, 0, 0);
+    color: #121313;
+}
+
+.type_site {
+    margin: 50px auto auto;
+    max-width: 890px;
+    text-align: justify;
+    color: #1c2534;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+}
+
+.type_site_p{
+    font-family: 'Franklin Gothic', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.type_site select {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 50px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic', sans-serif;
+    font-size: 17px;
+    color: #737373;
+}
+
+.message {
+    width: 190px;
+    height: 50px;
+    margin: 0px auto 5px;
+    border-radius: 5px;
+    background-color: #00b6af;
+    color: wheat;
+    font-size: 21px;
+    transition-duration: 0.2s;
+    margin: 40px auto;
+}
+
+.message:hover {
+    border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0);
+    color:black;
+}
+
+.message:active {
+    box-shadow: 0px 0px 10px #00b6af;
+}
+
+.hr_price {
+    margin-top:-10px;
+    margin-bottom: 30px;
+    max-width: 890px;
+	border-bottom: 5px solid #0a0a0a;
+}
+
+.deadlines{
+    float: left;
+    max-width: 890px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;  
+}
+
+.deadlines p {
+    width: 878px;
+    float: left;
+    font-family: 'Franklin Gothic', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    
+}
+
+.deadlines input {
+    transform-style: flat;
+    width: 150px;
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: right;
+}
+
+.deadlines div {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Редактирование блока статистика */
+.statistic {
+    float: left;
+    width: 100%;
+    background: url(../img/statistic.jpg) center/100% fixed;
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.statistic_row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-top: 50px;
+}
+
+.statistic_row div {
+    color:#323e4f;
+    transition: all 0.5s ease 0s;
+    flex-basis: 270px;
+    margin-bottom: 86px;
+    margin-top: 20px;
+}
+
+.statistic_row div:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.statistic img {
+    height: 60px;
+}
+
+.stat {
+    font-family: Impact, fantasy;
+    font-weight: 500;
+    font-size: 30px;
+    margin: 20px auto 10px;
+}
+
+.statistic_row div p:nth-child(3) {
+    font-family: "Andale Mono", monospace;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+@media (max-width:1080px) {
+    .statistic_row {
+        flex-wrap: wrap;
+    }
+    .statistic_row div:nth-child(4) {
+        margin-top: -50px;
+    }
+}
+
+@media (max-width:813px) {
+    .statistic_row div:nth-child(3) {
+        margin-top: -50px;
+    }
+}
+
+@media (max-width:507px) {
+    .statistic_row div:nth-child(2) {
+        margin-top: -50px;
+    }
+}
+
+/* Редактирование блока отзывы */
+
+.reviews {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.reviews img{
+    height: 100px;
+    border-radius: 50%;
+    margin: 60px auto 30px;
+}
+
+.articles article {
+    font-family:  Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    margin: 0 auto 40px;
+    font-size: 18px;
+}
+
+.articles p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin: 0 auto 50px;
+}
+
+.reviews input {
+    width: 30px;
+}
+
+/* Редактирование блока контакты */
+.contacts {
+    float: left;
+    width: 100%;
+    background: url(../img/contacts.jpg) repeat center/cover;
+    text-align: center;
+    color: white;
+}
+
+.title2 {
+    text-transform: uppercase;
+    margin-top: 100px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-shadow: 15px 15px 8px rgb(0, 0, 0);
+}
+.status {
+    font-family: "Trebuchet MS", sans-serif;
+    margin: 30px auto 45px;
+    font-size: 20px;
+}
+
+.box_cont img {
+    height: 40px;
+    margin-bottom: 15px;
+}
+.box_cont {
+    font-family:  Calibri, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    font-size: 17px;    
+}
+.box_cont a {
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width:768px) {
+    .box_cont{
+        display: flex;
+        flex-direction:row;
+        justify-content:space-around;
+    }
+    .box_cont>div {
+    max-width: 210px;
+    }
+}
+
+@media (max-width:440px) {
+    .box_cont>div {
+    margin-left: 30px;
+    }
+}
+
+.box_message p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 40px auto 45px;
+    text-transform: uppercase;
+    font-size: 21px;
+}
+
+.message_form {
+    margin: auto;
+    width: 60%;
+}
+
+.message1 {
+    width: 350px;
+    height: 35px;
+    margin:auto 13px 15px;
+    color: #5d5d5e;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.box_message textarea {
+    margin: auto;
+    width: 730px;
+    padding: 10px;
+    resize: none;
+    font-size: 18px;
+    color: #5d5d5e;
+}
+
+@media (max-width:755px) {
+    .message1 {
+        width: 90%;
+    }
+    .box_message textarea {
+        width: 90%;
+    }
+}
+
+.message2 {
+    width: 125px;
+    height: 50px;
+    color: rgb(216, 70, 25);
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 18px;
+    margin: 30px auto 75px;
+    text-shadow: 0 0 1px rgb(204, 31, 31);
+    padding: .8em 1.2em;
+    background: #c9d8dd linear-gradient(#b4b9bb, #ffffff);
+    box-shadow:
+        0 15px 12px -12px rgb(0,0,0),
+        0 -2px 0 -1px rgb(102, 103, 104),
+        0 -4px 0 -2px rgb(121, 122, 122),
+        0 -6px 0 -3px rgb(120, 120, 121),
+        0 -8px 0 -4px rgb(91, 92, 92),
+        0 -10px 0 -5px rgb(53, 54, 54),
+        0 -12px 0 -6px rgb(29, 29, 29);
+    transition: all 0.2s ease 0s;
+}
+
+.message2:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.message2:active {
+    margin: 0 calc(2px + 1px) 2px 0;
+    padding: calc(.8em - 2px) calc(1.2em - 6px - 2px);
+    border-left: 2px solid rgb(150,150,150);
+    border-right: 2px solid rgb(150,150,150);
+    border-bottom: 2px solid rgb(230,230,230);
+    background: rgb(44,160,202) linear-gradient(#a1b4bb, #975b5b);
+    box-shadow: none;
+    margin: 30px auto 75px;
+}
+
+.cont_img {
+    height: 40px;
+    margin: auto 35px 70px;
+    transition: all 0.5s ease 0s;
+}
+
+.cont_img:hover {
+    transform: scale(1.2, 1.2);    
+}
+
+/* Редактирование карты */
+.map {
+    float: left;
+}
+
+/* Редактирование подвала */
+footer {
+    float: left;
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    background-color: #354051;
+    border-top: 2px solid #4e5e75;
+}
+
+footer p {
+    padding-top: 40px;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
